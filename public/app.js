@@ -16,7 +16,7 @@ function add_to_cart(id)
 	 x = x * 1 + 1;
 	 window.localStorage.setItem(key, x);
 	 //вывод количества item'ов в корзине
-	 alert ('Items in your cart: ' + cart_get_number_of_items());
+	 //alert ('Items in your cart: ' + cart_get_number_of_items());
 
 	 update_orders_input();
 }
