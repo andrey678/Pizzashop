@@ -22,12 +22,17 @@ get '/about' do
 end
 post "/cart" do
 	orders_input = params [:orders]
-	@orders = parse_orders_input orders_input
+	@items = parse_orders_input orders_input
+
+	@items.each do |item|
+		#id, cnt
+		item[0] = Product.find(item[0])
+	end
 	erb :cart
 end
 
 def parse_orders_input orders_input
-	s1 = orders_input.split (/,/) #здесь у нас получается массив s1 = ["product_1=2","product_2=2","product_3=3"]
+	s1 = orders_input.split(/,/) #здесь у нас получается массив s1 = ["product_1=2","product_2=2","product_3=3"]
 #puts s1.inspect
 	arr = []
 
