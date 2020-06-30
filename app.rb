@@ -1,4 +1,3 @@
-#encoding: utf-8
 require 'rubygems'
 require 'sinatra'
 require 'sinatra/reloader'
@@ -23,10 +22,9 @@ get '/about' do
 	erb :about
 end
 
-post '/place_order'
+post '/place_order' do
 @order = Order.create params[:order]
 erb "Thank ouy"
-
 end
 
 
@@ -35,7 +33,7 @@ end
 
 
 post "/cart" do
-	@orders_input = params [:orders]
+	@orders_input = params[:orders]
 	@items = parse_orders_input @orders_input
 
 	@items.each do |item|
