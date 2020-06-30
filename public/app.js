@@ -68,3 +68,9 @@ function cart_get_orders()
 	}
 	return orders;
 }
+
+function cancel_order()
+{
+	window.localStorage.clear();
+	return false;
+}
