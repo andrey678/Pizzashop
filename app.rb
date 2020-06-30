@@ -51,7 +51,8 @@ post '/cart' do
 end
 
 def parse_orders_input orders_input
-	s1 = orders_input.split(/,/) #здесь у нас получается массив s1 = ["product_1=2","product_2=2","product_3=3"]
+	s1 = orders_input.split(/,/) 
+	#здесь у нас получается массив s1 = ["product_1=2","product_2=2","product_3=3"]
 #puts s1.inspect
 	arr = []
 
